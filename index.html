@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Húsanöfn Akraness</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqZ_7mwMYwEX8olOJGKpX4lsNUEBM9sBM"></script>
 
     <style>
       * {
@@ -36,14 +36,19 @@
         left: 0;
         right: 0;
         background: white;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 15px 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
         z-index: 100;
+        display: flex;
+        align-items: center;
+        gap: 20px;
       }
 
       .header h1 {
         color: #333;
         font-size: 24px;
+        margin: 0;
+        flex: 0 0 auto;
       }
 
       #map {
@@ -92,21 +97,33 @@
         z-index: 50;
         color: #666;
         font-size: 14px;
+        display: none;
+      }
+
+      .location-count.active {
+        display: block;
       }
 
       #searchInput {
-        padding: 8px 12px;
+        padding: 10px 14px;
         font-size: 14px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        width: 250px;
-        margin-left: 20px;
+        border: 1.5px solid #e0e0e0;
+        border-radius: 6px;
+        width: 300px;
+        flex: 1;
+        max-width: 400px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        font-family: inherit;
+      }
+
+      #searchInput::placeholder {
+        color: #999;
       }
 
       #searchInput:focus {
         outline: none;
-        border-color: #007bff;
-        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
       }
     </style>
   </head>
@@ -1926,6 +1943,7 @@
       function filterMarkers(searchTerm) {
         const term = searchTerm.toLowerCase();
         let visibleCount = 0;
+        const locationCountEl = document.getElementById('locationCount');
 
         markerData.forEach((data, index) => {
           const isMatch = data.location.name.toLowerCase().includes(term);
@@ -1933,8 +1951,12 @@
           if (isMatch) visibleCount++;
         });
 
-        document.getElementById('locationCount').textContent =
-          `Staðsetningar: ${visibleCount}`;
+        if (term.length > 0) {
+          locationCountEl.textContent = `Niðurstöður: ${visibleCount}`;
+          locationCountEl.classList.add('active');
+        } else {
+          locationCountEl.classList.remove('active');
+        }
       }
 
       function initMap() {
