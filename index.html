@@ -2033,6 +2033,17 @@
         document.getElementById(
           'locationCount',
         ).textContent = `Staðsetningar: ${locations.length}`;
+
+        // Close info panel when clicking on map
+        map.addListener('click', () => {
+          document.getElementById('infoPanel').classList.remove('active');
+          if (selectedMarker) {
+            selectedMarker.setIcon(
+              'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            );
+            selectedMarker = null;
+          }
+        });
       }
 
       // Initialize map when page loads
