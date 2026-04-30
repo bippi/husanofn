@@ -39,22 +39,30 @@
         padding: 15px 20px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
         z-index: 100;
-        display: flex;
-        align-items: center;
-        gap: 20px;
       }
 
       .header h1 {
         color: #333;
         font-size: 24px;
         margin: 0;
-        flex: 0 0 auto;
+      }
+
+      .search-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 12px 20px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.12);
+        z-index: 100;
       }
 
       #map {
         width: 100%;
         height: 100%;
         margin-top: 60px;
+        margin-bottom: 70px;
       }
 
       .info-panel {
@@ -105,15 +113,14 @@
       }
 
       #searchInput {
-        padding: 10px 14px;
+        padding: 12px 14px;
         font-size: 14px;
         border: 1.5px solid #e0e0e0;
         border-radius: 6px;
-        width: 300px;
-        flex: 1;
-        max-width: 400px;
+        width: 100%;
         transition: border-color 0.2s, box-shadow 0.2s;
         font-family: inherit;
+        box-sizing: border-box;
       }
 
       #searchInput::placeholder {
@@ -130,9 +137,11 @@
   <body>
     <div class="header">
       <h1>🗺️ Húsanöfn í Akranesi</h1>
-      <input type="text" id="searchInput" placeholder="Leitaðu að húsanafni..." />
     </div>
     <div id="map"></div>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Leitaðu að húsanafni..." />
+    </div>
     <div class="location-count" id="locationCount">Staðsetningar: 0</div>
     <div class="info-panel" id="infoPanel">
       <h3 id="placeName"></h3>
