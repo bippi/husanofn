@@ -93,11 +93,27 @@
         color: #666;
         font-size: 14px;
       }
+
+      #searchInput {
+        padding: 8px 12px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 250px;
+        margin-left: 20px;
+      }
+
+      #searchInput:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+      }
     </style>
   </head>
   <body>
     <div class="header">
       <h1>🗺️ Húsanöfn í Akranesi</h1>
+      <input type="text" id="searchInput" placeholder="Leitaðu að húsanafni..." />
     </div>
     <div id="map"></div>
     <div class="location-count" id="locationCount">Staðsetningar: 0</div>
@@ -1905,6 +1921,21 @@
       let map;
       let markers = [];
       let selectedMarker = null;
+      let markerData = [];
+
+      function filterMarkers(searchTerm) {
+        const term = searchTerm.toLowerCase();
+        let visibleCount = 0;
+
+        markerData.forEach((data, index) => {
+          const isMatch = data.location.name.toLowerCase().includes(term);
+          data.marker.setVisible(isMatch);
+          if (isMatch) visibleCount++;
+        });
+
+        document.getElementById('locationCount').textContent =
+          `Staðsetningar: ${visibleCount}`;
+      }
 
       function initMap() {
         // Center on Akranes, Iceland
@@ -1964,6 +1995,7 @@
           });
 
           markers.push(marker);
+          markerData.push({ location, marker });
         });
 
         // Update location count
@@ -1974,6 +2006,11 @@
 
       // Initialize map when page loads
       window.addEventListener('load', initMap);
+
+      // Search functionality
+      document.getElementById('searchInput').addEventListener('input', (e) => {
+        filterMarkers(e.target.value);
+      });
     </script>
   </body>
 </html>
