@@ -4,17 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Húsanöfn í Akranesi - Gagnasafn um húsanöfn og staðsetningar</title>
-    <meta name="description" content="Finndu húsanöfn og staðsetningar á Akranesi með gagnvirkri Google Maps korti. Lestu um 375+ húsanöfn með nákvæmum hnitum og tengil á ljósmyndasafn." />
-    <meta name="keywords" content="húsanöfn, Akranes, Ísland, gagnasafn, staðsetningar, kort, GPS" />
+    <meta
+      name="description"
+      content="Finndu húsanöfn og staðsetningar á Akranesi með gagnvirkri Google Maps korti. Lestu um 375+ húsanöfn með nákvæmum hnitum og tengil á ljósmyndasafn."
+    />
+    <meta
+      name="keywords"
+      content="húsanöfn, Akranes, Ísland, gagnasafn, staðsetningar, kort, GPS"
+    />
     <meta name="author" content="Akranes" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Húsanöfn í Akranesi - Gagnasafn um húsanöfn og staðsetningar" />
-    <meta property="og:description" content="Finndu húsanöfn og staðsetningar á Akranesi með gagnvirkri Google Maps korti. Lestu um 375+ húsanöfn." />
+    <meta
+      property="og:title"
+      content="Húsanöfn í Akranesi - Gagnasafn um húsanöfn og staðsetningar"
+    />
+    <meta
+      property="og:description"
+      content="Finndu húsanöfn og staðsetningar á Akranesi með gagnvirkri Google Maps korti. Lestu um 375+ húsanöfn."
+    />
     <meta property="og:url" content="https://husanofn.skaginn.is" />
-    <meta property="og:image" content="https://husanofn.skaginn.is/og-image.svg" />
+    <meta
+      property="og:image"
+      content="https://husanofn.skaginn.is/og-image.svg"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="is_IS" />
@@ -22,30 +37,33 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Húsanöfn í Akranesi" />
-    <meta name="twitter:description" content="Gagnvirt kort yfir húsanöfn og staðsetningar á Akranesi" />
+    <meta
+      name="twitter:description"
+      content="Gagnvirt kort yfir húsanöfn og staðsetningar á Akranesi"
+    />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://husanofn.skaginn.is" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Húsanöfn Akraness",
-      "description": "Gagnasafn um húsanöfn og staðsetningar á Akranesi",
-      "url": "https://husanofn.skaginn.is",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Akranes",
-        "addressCountry": "IS"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "64.3175",
-        "longitude": "-22.083"
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Húsanöfn Akraness",
+        "description": "Gagnasafn um húsanöfn og staðsetningar á Akranesi",
+        "url": "https://husanofn.skaginn.is",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Akranes",
+          "addressCountry": "IS"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "64.3175",
+          "longitude": "-22.083"
+        }
       }
-    }
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqZ_7mwMYwEX8olOJGKpX4lsNUEBM9sBM"></script>
@@ -65,7 +83,7 @@
     </div>
     <div class="location-count" id="locationCount">Staðsetningar: 0</div>
     <button class="location-btn" id="locationBtn">
-      📍 Hús nálægt þér (100m)
+      📍 Hús nálægt þér (200m)
     </button>
     <div class="loader" id="loader">
       <div class="loader-spinner"></div>
@@ -78,9 +96,6 @@
     <div class="info-panel" id="infoPanel">
       <h3 id="placeName"></h3>
       <p id="placeCoords"></p>
-      <a id="archiveLink" href="#" target="_blank"
-        >Leita að myndum í ljósmyndasafni →</a
-      >
     </div>
 
     <script src="script.js"></script>

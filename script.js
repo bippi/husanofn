@@ -6,7 +6,7 @@ let userMarker = null;
 let userCircle = null;
 let isTrackingLocation = false;
 let watchId = null;
-const NEARBY_DISTANCE = 500; // meters
+const NEARBY_DISTANCE = 200; // meters
 
 function filterMarkers(searchTerm) {
   const term = searchTerm.toLowerCase();
@@ -208,9 +208,9 @@ function stopLocationTracking() {
 
 function loadLocations(callback) {
   fetch('locations.json')
-    .then(response => response.json())
-    .then(data => callback(data))
-    .catch(error => console.error('Error loading locations:', error));
+    .then((response) => response.json())
+    .then((data) => callback(data))
+    .catch((error) => console.error('Error loading locations:', error));
 }
 
 function initMap(locations) {
@@ -255,9 +255,7 @@ function initMap(locations) {
       }
 
       // Set new marker color to blue
-      marker.setIcon(
-        'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-      );
+      marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
       selectedMarker = marker;
 
       // Update info panel
@@ -267,12 +265,6 @@ function initMap(locations) {
       ).textContent = `Breiddargráða: ${location.location.lat.toFixed(
         4,
       )}, Lengdargráða: ${location.location.lon.toFixed(4)}`;
-
-      // Update archive link
-      const archiveUrl = `https://ljosmyndasafn.akranes.is/is/index/results?album=420&q=${encodeURIComponent(
-        location.name,
-      )}`;
-      document.getElementById('archiveLink').href = archiveUrl;
 
       document.getElementById('infoPanel').classList.add('active');
 
