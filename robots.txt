@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /locations.json
+Disallow:
+
+Sitemap: https://husanofn.skaginn.is/sitemap.xml
+
+# Crawl delay (ms)
+Crawl-delay: 1

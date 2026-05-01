@@ -1,0 +1,66 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e3f2fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b3e5fc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Map section -->
+  <rect x="50" y="150" width="500" height="450" fill="url(#mapGradient)" rx="8"/>
+
+  <!-- Map roads -->
+  <line x1="100" y1="250" x2="450" y2="280" stroke="#999" stroke-width="3"/>
+  <line x1="150" y1="200" x2="300" y2="450" stroke="#999" stroke-width="3"/>
+  <line x1="200" y1="150" x2="200" y2="550" stroke="#999" stroke-width="3"/>
+  <line x1="350" y1="180" x2="480" y2="500" stroke="#999" stroke-width="3"/>
+
+  <!-- Map location pins -->
+  <circle cx="120" cy="220" r="8" fill="#e74c3c"/>
+  <circle cx="180" cy="300" r="8" fill="#e74c3c"/>
+  <circle cx="250" cy="250" r="8" fill="#e74c3c"/>
+  <circle cx="320" cy="350" r="8" fill="#e74c3c"/>
+  <circle cx="280" cy="420" r="8" fill="#e74c3c"/>
+  <circle cx="380" cy="280" r="8" fill="#3498db" stroke="white" stroke-width="2"/>
+  <circle cx="420" cy="400" r="8" fill="#e74c3c"/>
+
+  <!-- Text section background -->
+  <rect x="600" y="150" width="550" height="450" fill="white" rx="8"/>
+
+  <!-- Title -->
+  <text x="875" y="280" font-family="Arial, sans-serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#1a237e">
+    Húsanöfn
+  </text>
+  <text x="875" y="340" font-family="Arial, sans-serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#1a237e">
+    í Akranesi
+  </text>
+
+  <!-- Subtitle -->
+  <text x="875" y="400" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#424242">
+    Gagnasafn um húsanöfn og staðsetningar
+  </text>
+
+  <!-- Features -->
+  <text x="620" y="460" font-family="Arial, sans-serif" font-size="16" fill="#666">
+    🗺️ Gagnvirkt kort
+  </text>
+  <text x="620" y="495" font-family="Arial, sans-serif" font-size="16" fill="#666">
+    📍 Staðsetningar með GPS
+  </text>
+  <text x="620" y="530" font-family="Arial, sans-serif" font-size="16" fill="#666">
+    🏘️ 235+ húsanöfn
+  </text>
+
+  <!-- URL -->
+  <text x="875" y="580" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#999">
+    husanofn.skaginn.is
+  </text>
+</svg>
